@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rm Fit Suplementos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="app">
+
+    <section class="screen active" id="homeScreen">
+
+      <header class="header">
+        <div class="location">
+          <div class="location-icon">⌖</div>
+          <div>
+            <small>Localizado em</small>
+            <strong>Gravatá, PE</strong>
+          </div>
+        </div>
+
+        <button class="menu-btn" id="openSheet">☰</button>
+      </header>
+
+      <section class="search-area">
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="searchInput" placeholder="Buscar produtos..." />
+        </div>
+      </section>
+
+      <section class="hero-slider">
+<!--Banners Main-->
+  <article class="hero-slide active">
+    <div class="hero-content">
+      <small>Entrega de produtos</small>
+      <h1>Delivery Gravatá</h1>
+      <button>Ver produtos</button>
+    </div>
+
+    <img 
+      src="/src/assets/hero/cesta.svg" 
+      alt="Cesta de frutas"
+    >
+  </article>
+
+  <article class="hero-slide">
+    <div class="hero-content">
+      <small>Faça seu pedido</small>
+      <h1>Receba direto na sua porta</h1>
+      <button>Peça agora</button>
+    </div>
+
+    <img 
+      src="/src/assets/hero/sacola.svg" 
+      alt="Sacola de compras"
+    >
+  </article>
+
+  <article class="hero-slide offer-slide">
+    <div class="hero-content">
+      <small>Até 40% OFF</small>
+      <h1>Economize nos seus pedidos</h1>
+      <button>Ver ofertas</button>
+    </div>
+
+    <img 
+      src="/src/assets/hero/caixa.svg"
+      style="margin-right: 5%;"
+      alt="Caixa de vegetais"
+    >
+  </article>
+
+</section>
+
+<div class="dots">
+  <div class="dot active"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+      <nav class="tabs" id="categoryTabs">
+        <br>
+        <button class="active" data-category="todos">Mais pedidos</button>
+        <button data-category="whey">Whey</button>
+        <button data-category="creatina">Creatina</button>
+        <button data-category="suplementos">Suplementos</button>
+      </nav>
+
+      <section class="products" id="products">
+
+        <div 
+          class="product-card" 
+          data-id="PROD-001"
+          data-name="Creatina ASF Labs"
+          data-unit="300g"
+          data-price="100.00"
+          data-category="creatina"
+          data-search="creatina asf labs suplemento"
+          data-img="/src/assets/creatina 1.svg"
+        >
+          <img src="/src/assets/creatina 1.svg" alt="Bananas">
+          <h3>Creatina ASF Labs</h3>
+          <small>300g</small>
+          <strong>R$ 100,00</strong>
+          <button class="add-btn">+</button>
+        </div>
+
+        <div 
+          class="product-card" 
+          data-id="PROD-002"
+          data-name="Glutamina ASF Labs"
+          data-unit="300g"
+          data-price="40.00"
+          data-category="creatina"
+          data-search="glutamina asf labs suplemento"
+          data-img="/src/assets/glutamina 1.svg"
+        >
+          <img src="/src/assets/glutamina 1.svg" alt="Cenouras">
+          <h3>Glutamina ASF Labs</h3>
+          <small>300g</small>
+          <strong>R$ 40,00</strong>
+          <button class="add-btn">+</button>
+        </div>
+
+        <div 
+          class="product-card" 
+          data-id="PROD-003"
+          data-name="Hyper Whey Isolate XTR"
+          data-unit="900g"
+          data-price="150.00"
+          data-category="whey"
+          data-search="Whey XTR"
+          data-img="/src/assets/whey isolate 1.svg"
+        >
+          <img src="/src/assets/whey isolate 1.svg" alt="Maçãs">
+          <h3>Hyper Whey Isolate XTR</h3>
+          <small>900g</small>
+          <strong>R$ 150,00</strong>
+          <button class="add-btn">+</button>
+        </div>
+
+        <div 
+          class="product-card" 
+          data-id="PROD-004"
+          data-name="XTR Hyper Slim"
+          data-unit="60 capsulas"
+          data-price="130.00"
+          data-category="suplementos"
+          data-search="Hyper Slim XTR"
+          data-img="/src/assets/hyper slim 1.svg"
+        >
+          <img src="/src/assets/hyper slim 1.svg" alt="Batatas">
+          <h3>Xtr Hyper Slim - 60 cápsulas</h3>
+          <small>Peso líquido 120g</small>
+          <strong>R$ 130,00</strong>
+          <button class="add-btn">+</button>
+        </div>
+
+        <p class="no-result" id="noResult">Nenhum produto encontrado.</p>
+      </section>
+    </section>
+    <!--Second Section-->
+    <section class="screen" id="ordersScreen">
+
+      <header class="page-header">
+        <button class="back-btn" id="backHome">‹</button>
+        <h2 class="page-title">Meus Pedidos</h2>
+        <button class="menu-btn" id="openSheetOrders">⋮</button>
+      </header>
+
+      <div id="cartContent"></div>
+
+      <section class="checkout-box">
+        <h3>Dados para entrega</h3>
+
+        <div class="form-group">
+          <label>Nome do responsável</label>
+          <input type="text" id="clientName" placeholder="Digite seu nome">
+        </div>
+
+        <div class="form-group">
+          <label>Loja ou estabelecimento</label>
+          <input type="text" id="clientPlace" placeholder="Ex: Loja, mercado, restaurante...">
+        </div>
+
+        <div class="form-group">
+          <label>Cidade / região</label>
+          <select id="clientCity">
+            <option value="">Selecione sua cidade</option>
+            <option value="Gravatá">Gravatá</option>
+            <option value="Chã Grande">Chã Grande</option>
+            <option value="Vitória de Santo Antão">Vitória de Santo Antão</option>
+            <option value="Caruaru">Caruaru</option>
+            <option value="Outra região">Outra região</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Observação</label>
+          <textarea id="clientNote" placeholder="Ex: entregar pela manhã, falar com gerente..."></textarea>
+        </div>
+      </section>
+
+      <section class="summary">
+        <div class="summary-row">
+          <span>Itens</span>
+          <strong id="summaryItems">0</strong>
+        </div>
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <strong id="summaryTotal">R$ 0,00</strong>
+        </div>
+      </section>
+
+      <button class="send-btn" id="sendWhatsapp">Enviar pedido no WhatsApp</button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" id="homeNav">
+      <span>🏠</span>
+      Início
+    </button>
+
+    <button class="nav-item" id="ordersNav">
+      <span>🛒</span>
+      Pedidos
+      <div class="cart-count" id="cartCount">0</div>
+    </button>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+
+  <section class="bottom-sheet" id="bottomSheet">
+    <div class="sheet-line"></div>
+    <h2>Menu rápido</h2>
+
+    <div class="sheet-option">Produtos disponíveis</div>
+    <div class="sheet-option">Pedidos pelo WhatsApp</div>
+    <div class="sheet-option">Entrega para estabelecimentos</div>
+    <div class="sheet-option">Atendimento comercial</div>
+  </section>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
