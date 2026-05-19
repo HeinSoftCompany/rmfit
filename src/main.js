@@ -259,7 +259,7 @@ sendWhatsapp.addEventListener('click', () => {
   }
 
   if (!clientPlace.value.trim()) {
-    alert('Digite o nome da loja ou estabelecimento.')
+    alert('Digite o nome da local da entrega')
     return
   }
 
